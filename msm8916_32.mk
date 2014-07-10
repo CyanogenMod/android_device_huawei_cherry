@@ -1,4 +1,4 @@
-TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_BSP := false
 ifeq ($(TARGET_PRODUCT),msm8916_32)
 TARGET_USES_QCA_NFC := true
 endif
@@ -68,7 +68,6 @@ endif # TARGET_USES_QCA_NFC
 
 # Feature definition files for msm8916
 PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
