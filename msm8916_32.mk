@@ -2,13 +2,9 @@ TARGET_USES_QCOM_BSP := true
 ifeq ($(TARGET_PRODUCT),msm8916_32)
 TARGET_USES_QCA_NFC := true
 endif
-ifeq ($(TARGET_USES_QCOM_BSP), true)
+
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-endif #TARGET_USES_QCOM_BSP
-
-
-
 
 # media_profiles and media_codecs xmls for 8916
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
