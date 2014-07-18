@@ -47,6 +47,8 @@ media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-scan=true
+media.swhevccodectype=0
+media.hwhevccodectype=0
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 #codecs:(PARSER_)AAC AC3 ASF AVI DTS 3G2 MP2TS QCP FLAC
