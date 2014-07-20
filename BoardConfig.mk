@@ -39,7 +39,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_ABI  := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -94,7 +94,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_BSP := false
 
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
