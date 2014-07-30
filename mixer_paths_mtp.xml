@@ -183,6 +183,7 @@
     </path>
 
     <path name="deep-buffer-playback bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
 
@@ -212,6 +213,7 @@
     </path>
 
     <path name="low-latency-playback bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="low-latency-playback bt-sco" />
     </path>
 
