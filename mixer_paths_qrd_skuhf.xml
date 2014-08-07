@@ -213,7 +213,6 @@
     </path>
 
     <path name="deep-buffer-playback bt-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
 
@@ -243,7 +242,6 @@
     </path>
 
     <path name="low-latency-playback bt-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="low-latency-playback bt-sco" />
     </path>
 
@@ -553,7 +551,6 @@
     </path>
 
     <path name="handset">
-        <ctl name="EAR PA Boost" value="ENABLE" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
         <ctl name="RX1 Digital Volume" value="84" />
