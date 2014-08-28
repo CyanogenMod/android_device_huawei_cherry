@@ -184,3 +184,9 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
+
+service hbtp /system/vendor/bin/hbtp_daemon
+   class main
+   user system
+   group system
+   disabled
