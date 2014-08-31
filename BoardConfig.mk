@@ -102,3 +102,6 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 #Add support for firmare upgrade on 8916
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
+
+#add suffix variable to uniquely identify the board
+TARGET_BOARD_SUFFIX := _32
