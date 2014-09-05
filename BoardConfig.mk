@@ -105,3 +105,6 @@ HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 
 #add suffix variable to uniquely identify the board
 TARGET_BOARD_SUFFIX := _32
+
+#Use dlmalloc instead of jemalloc for mallocs
+MALLOC_IMPL := dlmalloc
