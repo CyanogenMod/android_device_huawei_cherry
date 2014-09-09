@@ -500,6 +500,7 @@
     <path name="voice-headphones">
         <path name="sidetone-headphone" />
         <path name="headphones" />
+        <path name="sidetone-headphone" />
     </path>
 
     <path name="voice-headset-mic">
