@@ -72,7 +72,7 @@ persist.timed.enable=true
 ro.opengles.version=131072
 
 # System property for cabl
-ro.qualcomm.cabl=0
+ro.qualcomm.cabl=2
 
 #
 # System props for telephony
@@ -98,7 +98,6 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 #Set for msm8916
 tunnel.audio.encode = false
-ro.config.low_ram=true
 #Buffer size in kbytes for compress offload playback
 audio.offload.buffer.size.kb=32
 #use VERY_HIGH_QUALITY for audio resampler
@@ -126,3 +125,6 @@ persist.sys.usb.config=diag,serial_smd,rmnet_bam,adb
 persist.debug.wfd.enable=1
 #propery to enable VDS WFD solution
 persist.hwc.enable_vds=1
+
+#selects CoreSight configuration to enable
+persist.debug.coresight.config=stm-events
