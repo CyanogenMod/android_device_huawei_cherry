@@ -48,9 +48,10 @@ on fs
 
     wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    restorecon_recursive   /persist
 
     wait /dev/block/bootdevice/by-name/modem
-    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro context=u:object_r:firmware_file:s0,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
     #write /sys/kernel/boot_adsp/boot 1
 
 on post-fs-data
@@ -65,6 +66,10 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
+
+#enable zram
+on property:ro.config.zram=true
+    swapon_all fstab.qcom
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -142,6 +147,17 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
+
+on charger
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    chown root system /sys/class/power_supply/bms/current_now
+    chown root system /sys/class/power_supply/bms/voltage_ocv
+    chmod 0664 /sys/class/power_supply/bms/current_now
+    chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+    start vm_bms
+    load_all_props
+    start qcom-post-boot
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
