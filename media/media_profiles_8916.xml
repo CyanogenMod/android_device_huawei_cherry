@@ -200,32 +200,6 @@
              channels="2" />
     </EncoderProfile>
 
-    <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="4096"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="3840"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
-    </EncoderProfile>
-
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -434,32 +408,6 @@
              channels="2" />
     </EncoderProfile>
 
-    <EncoderProfile quality="timelapse4kdci" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="4096"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapse2160p" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="3840"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
-    </EncoderProfile>
-
         <ImageEncoding quality="95" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
@@ -611,32 +559,6 @@
              bitRate="156000"
              sampleRate="48000"
              channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="4096"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-            bitRate="100000000"
-            width="3840"
-            height="2160"
-            frameRate="30" />
-
-      <Audio codec="aac"
-            bitRate="156000"
-            sampleRate="48000"
-            channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
@@ -823,12 +745,12 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="100000000"
-        minFrameWidth="176" maxFrameWidth="4096"
-        minFrameHeight="144" maxFrameHeight="2160"
+        minBitRate="64000" maxBitRate="20000000"
+        minFrameWidth="176" maxFrameWidth="1920"
+        minFrameHeight="144" maxFrameHeight="1088"
         minFrameRate="15" maxFrameRate="30"
-        maxHFRFrameWidth="1920" maxHFRFrameHeight="1080"
-        maxHFRMode="120"  />
+        maxHFRFrameWidth="1280" maxHFRFrameHeight="720"
+        maxHFRMode="60"  />
 
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="64000" maxBitRate="2000000"
@@ -897,9 +819,9 @@
         For this platform, it allows maximum 30MB(3MB per 1080p frame x 10
         frames) memory.
     -->
-    <VideoEditorCap  maxInputFrameWidth="1920"
-        maxInputFrameHeight="1088" maxOutputFrameWidth="1920"
-        maxOutputFrameHeight="1088" maxPrefetchYUVFrames="10"/>
+    <VideoEditorCap  maxInputFrameWidth="1280"
+        maxInputFrameHeight="720" maxOutputFrameWidth="1280"
+        maxOutputFrameHeight="720" maxPrefetchYUVFrames="10"/>
     <!--
         The VideoEditor Export codec profile and level values
         correspond to the values in OMX_Video.h.
