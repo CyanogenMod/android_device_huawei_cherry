@@ -156,11 +156,6 @@ service imsdatadaemon /system/bin/imsdatadaemon
     group system ims wifi radio inet net_raw log qcom_diag net_admin
     disabled
 
-service seald /system/bin/seald
-    class late_start
-    user root
-    group system
-
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
