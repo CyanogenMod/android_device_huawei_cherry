@@ -102,8 +102,6 @@ tunnel.audio.encode = false
 audio.offload.buffer.size.kb=240
 #Minimum duration for offload playback in secs
 audio.offload.min.duration.secs=30
-#use VERY_HIGH_QUALITY for audio resampler
-af.resampler.quality=4
 #Enable offload audio video playback by default
 av.offload.enable=false
 #enable voice path for PCM VoIP by default
