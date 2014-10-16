@@ -131,3 +131,6 @@ persist.debug.coresight.config=stm-events
 
 #property to enable narrow search range for video encoding
 vidc.enc.narrow.searchrange=1
+
+#property to enable DS2 dap
+audio.dolby.ds2.enabled=true
