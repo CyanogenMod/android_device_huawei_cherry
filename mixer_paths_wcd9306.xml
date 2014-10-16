@@ -411,6 +411,10 @@
         <ctl name="MultiMedia8 Mixer INTERNAL_BT_SCO_TX" value="1" />
     </path>
 
+    <path name="low-latency-record">
+        <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="1" />
+    </path>
+
     <path name="audio-record-compress bt-sco-wb">
         <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="audio-record-compress bt-sco" />
