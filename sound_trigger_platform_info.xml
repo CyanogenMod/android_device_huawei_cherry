@@ -37,5 +37,6 @@
     <ctrl name="max_ape_users" value="5" />
     <ctrl name="enable_failure_detection" value="false" />
     <ctrl name="rx_concurrency_disabled" value="true" />
+    <ctrl name="rx_conc_max_st_ses" value="1" />
 </sound_trigger_platform_info>
 
