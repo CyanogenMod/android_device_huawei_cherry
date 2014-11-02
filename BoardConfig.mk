@@ -94,7 +94,6 @@ ADD_RADIO_FILES ?= false
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
