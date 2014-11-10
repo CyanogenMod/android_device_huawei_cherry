@@ -26,7 +26,8 @@ PRODUCT_BOOT_JARS += \
            WfdCommon \
            oem-services \
            qcom.fmradio \
-           org.codeaurora.Performance
+           org.codeaurora.Performance \
+           tcmiface
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
