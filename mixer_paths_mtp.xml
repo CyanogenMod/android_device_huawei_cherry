@@ -496,9 +496,9 @@
     </path>
 
     <path name="speaker">
+        <ctl name="Speaker Boost" value="ENABLE" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SPK DAC Switch" value="1" />
-        <ctl name="Speaker Boost" value="ENABLE" />
     </path>
 
     <path name="speaker-mic">
