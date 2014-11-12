@@ -109,6 +109,7 @@ service aostlmd /system/bin/aostlmd
 #   disabled
 
 service perfd /system/bin/perfd
+   class main
    user root
    disabled
 
