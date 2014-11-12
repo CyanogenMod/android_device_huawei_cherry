@@ -31,8 +31,12 @@
 <resources>
    <!-- Whether cpu boost is enabled for overscroller fling. -->
    <bool name="config_enableCpuBoostForOverScrollerFling">true</bool>
+   <integer name="flingboost_schedboost_param">0x1E01</integer>
+   <integer name="flingboost_cpuboost_param">0x20B</integer>
    <!-- Whether cpu boost is enabled for horizontal scroll. -->
    <bool name="config_enableCpuBoostForScroller">true</bool>
+   <integer name="scrollboost_schedboost_param">0x1E01</integer>
+   <integer name="scrollboost_cpuboost_param">0x20B</integer>
    <!-- Whether cpu boost is enabled for application's 1st launch. -->
    <bool name="config_enableCpuBoostForAppLaunch">true</bool>
    <integer name="launchboost_timeout_param">2000</integer>
