@@ -131,6 +131,7 @@ service audiod /system/bin/audiod
    group system
 
 on boot
+    start rmt_storage
     insmod /system/lib/modules/adsprpc.ko
 
 service ppd /system/bin/mm-pp-daemon
