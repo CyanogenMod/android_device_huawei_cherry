@@ -37,6 +37,8 @@
     <ctl name="LSM7 MUX" value="None" />
     <ctl name="LSM8 MUX" value="None" />
     <ctl name="TERT_MI2S_TX LSM Function" value="None" />
+    <ctl name="DEC1 MUX" value="ZERO" />
+    <ctl name="ADC2 MUX" value="ZERO" />
 
     <path name="listen-voice-wakeup-1">
         <ctl name="LSM1 MUX" value="TERT_MI2S_TX" />
@@ -73,9 +75,6 @@
     </path>
 
     <path name="listen-handset-mic">
-        <!-- this is to avoid codec mute when device is not enabled first -->
-        <ctl name="LOOPBACK Mode" value="ENABLE" />
-        <!-- actual device ebable sequence -->
         <ctl name="DEC1 MUX" value="ADC2" />
         <ctl name="ADC2 MUX" value="INP3" />
     </path>
