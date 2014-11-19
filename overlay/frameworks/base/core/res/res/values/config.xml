@@ -44,6 +44,11 @@
    <integer name="launchboost_cpuboost_param">0x20F</integer>
    <integer name="launchboost_pcdisbl_param">0x101</integer>
    <integer name="launchboost_ksmboost_param">0x1C00</integer>
+   <!-- Whether cpu boost is enabled for animation during exit and entry -->
+   <bool name="config_enablePerfBoostForAnimation">true</bool>
+   <integer name="animationboost_schedboost_param">0x1E01</integer>
+   <integer name="animationboost_cpuboost_param">0x20B</integer>
+   <integer name="animationboost_timeout_param">600</integer>
    <!-- Indicate whether to allow the device to suspend when the screen is off
    due to the proximity sensor.  This resource should only be set to true
    if the sensor HAL correctly handles the proximity sensor as a wake-up source.
