@@ -55,4 +55,16 @@
    Otherwise, the device may fail to wake out of suspend reliably.
    The default is false. -->
    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
+   <!-- Activities list for boost -->
+   <string-array translatable="false" name="boost_activityList">
+        <item>chrome</item>
+        <item>browser</item>
+   </string-array>
+
+   <!-- Activity scroll boost params -->
+   <integer name="ascrollboost_timeout">50</integer>
+   <integer name="ascrollboost_schedboost">0x1E01</integer>
+   <integer name="ascrollboost_cpuboost">0x20F</integer>
+   <integer name="ascrollboost_pcdisbl">0x101</integer>
 </resources>
