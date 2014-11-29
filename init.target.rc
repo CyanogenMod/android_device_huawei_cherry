@@ -110,6 +110,7 @@ service qseecomd /system/bin/qseecomd
 #   disabled
 
 service perfd /system/bin/perfd
+   class main
    user root
    disabled
 
