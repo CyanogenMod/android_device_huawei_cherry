@@ -33,4 +33,9 @@
    <bool name="config_enableCpuBoostForOverScrollerFling">true</bool>
    <!-- Whether cpu boost is enabled for horizontal scroll. -->
    <bool name="config_enableCpuBoostForScroller">true</bool>
+   <!-- Whether cpu boost is enabled for animation during exit and entry -->
+   <bool name="config_enablePerfBoostForAnimation">true</bool>
+   <integer name="animationboost_schedboost_param">0x1E01</integer>
+   <integer name="animationboost_cpuboost_param">0x20B</integer>
+   <integer name="animationboost_timeout_param">600</integer>
 </resources>
