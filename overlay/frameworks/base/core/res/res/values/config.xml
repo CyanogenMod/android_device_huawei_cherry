@@ -65,7 +65,7 @@
    </string-array>
 
    <!-- Activity scroll boost params -->
-   <integer name="ascrollboost_timeout">50</integer>
+   <integer name="ascrollboost_timeout">17</integer>
    <integer name="ascrollboost_schedboost">0x1E01</integer>
    <integer name="ascrollboost_cpuboost">0x20F</integer>
    <integer name="ascrollboost_pcdisbl">0x101</integer>
