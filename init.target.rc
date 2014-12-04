@@ -48,6 +48,7 @@ on fs
 
     wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    mkdir /persist/data 0700  system system
     restorecon_recursive   /persist
 
     wait /dev/block/bootdevice/by-name/modem
@@ -130,6 +131,7 @@ service audiod /system/bin/audiod
    group system
 
 on boot
+    start rmt_storage
     insmod /system/lib/modules/adsprpc.ko
 
 service ppd /system/bin/mm-pp-daemon
