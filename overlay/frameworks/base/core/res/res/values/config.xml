@@ -31,11 +31,42 @@
 <resources>
    <!-- Whether cpu boost is enabled for overscroller fling. -->
    <bool name="config_enableCpuBoostForOverScrollerFling">true</bool>
+   <integer name="flingboost_schedboost_param">0x1E01</integer>
+   <integer name="flingboost_cpuboost_param">0x20D</integer>
+   <integer name="flingboost_preferidle_param">0x3E01</integer>
    <!-- Whether cpu boost is enabled for horizontal scroll. -->
    <bool name="config_enableCpuBoostForScroller">true</bool>
+   <integer name="scrollboost_schedboost_param">0x1E01</integer>
+   <integer name="scrollboost_cpuboost_param">0x20D</integer>
+   <integer name="scrollboost_preferidle_param">0x3E01</integer>
+   <!-- Whether cpu boost is enabled for application's 1st launch. -->
+   <bool name="config_enableCpuBoostForAppLaunch">true</bool>
+   <integer name="launchboost_timeout_param">2000</integer>
+   <integer name="launchboost_schedboost_param">0x1E01</integer>
+   <integer name="launchboost_cpuboost_param">0x20F</integer>
+   <integer name="launchboost_pcdisbl_param">0x101</integer>
+   <integer name="launchboost_ksmboost_param">0x1C00</integer>
    <!-- Whether cpu boost is enabled for animation during exit and entry -->
    <bool name="config_enablePerfBoostForAnimation">true</bool>
    <integer name="animationboost_schedboost_param">0x1E01</integer>
    <integer name="animationboost_cpuboost_param">0x20B</integer>
    <integer name="animationboost_timeout_param">600</integer>
+   <!-- Indicate whether to allow the device to suspend when the screen is off
+   due to the proximity sensor.  This resource should only be set to true
+   if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+   Otherwise, the device may fail to wake out of suspend reliably.
+   The default is false. -->
+   <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
+   <!-- Activities list for boost -->
+   <string-array translatable="false" name="boost_activityList">
+        <item>chrome</item>
+        <item>browser</item>
+   </string-array>
+
+   <!-- Activity scroll boost params -->
+   <integer name="ascrollboost_timeout">50</integer>
+   <integer name="ascrollboost_schedboost">0x1E01</integer>
+   <integer name="ascrollboost_cpuboost">0x20F</integer>
+   <integer name="ascrollboost_pcdisbl">0x101</integer>
 </resources>
