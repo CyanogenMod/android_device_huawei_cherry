@@ -69,4 +69,6 @@
    <integer name="ascrollboost_schedboost">0x1E01</integer>
    <integer name="ascrollboost_cpuboost">0x20F</integer>
    <integer name="ascrollboost_pcdisbl">0x101</integer>
+   <!-- Should the device show AM/PM in unlock screen -->
+   <bool name="config_show_ampm_in_unlock_screen">true</bool>
 </resources>
