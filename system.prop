@@ -57,7 +57,7 @@ media.aac_51_output_enabled=true
 mm.enable.qcom_parser=3407871
 
 # Default to AwesomePlayer
-media.stagefright.use-awesome=true
+media.stagefright.use-awesome=false
 
 #
 # system props for the data modules
