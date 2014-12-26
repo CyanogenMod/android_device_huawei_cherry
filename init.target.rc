@@ -157,6 +157,7 @@ service wcnss-service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
+    oneshot
 
 on charger
     wait /dev/block/bootdevice/by-name/system
