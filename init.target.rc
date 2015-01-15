@@ -73,6 +73,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 #enable zram
 on property:ro.config.zram=true
     swapon_all fstab.qcom
+    write /proc/sys/vm/swappiness 100
 
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
