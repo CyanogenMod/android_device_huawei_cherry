@@ -15,4 +15,4 @@
 /devices/platform/msm_hsusb                  /storage/usbotg    vfat    nosuid,nodev         wait,voldmanaged=usbotg:auto
 /devices/soc.0/79c0000.qcom,ehci-host        /storage/uicc0     vfat    nosuid,nodev         wait,voldmanaged=uicc0:auto
 /devices/soc.0/79c0000.qcom,ehci-host        /storage/uicc1     vfat    nosuid,nodev         wait,voldmanaged=uicc1:auto
-/dev/block/zram0             none         swap    defaults zramsize=268435456
+/dev/block/zram0             none         swap    defaults zramsize=536870912
