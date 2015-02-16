@@ -86,6 +86,8 @@ ro.qualcomm.cabl=2
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
 telephony.lteOnCdmaDevice=1
+persist.data.target=dpm1
+
 #
 # System props for bluetooh
 # System prop to turn on hfp client
