@@ -28,10 +28,12 @@ $(call inherit-product, device/qcom/common/common.mk)
 PRODUCT_NAME := msm8916_32
 PRODUCT_DEVICE := msm8916_32
 
+ifeq ($(strip $(TARGET_USES_QTIC)),true)
 # font rendering engine feature switch
 -include $(QCPATH)/common/config/rendering-engine.mk
 ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
     MULTI_LANG_ENGINE := REVERIE
+endif
 endif
 
 PRODUCT_BOOT_JARS += \
