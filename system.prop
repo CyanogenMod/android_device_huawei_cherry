@@ -88,6 +88,7 @@ ro.qualcomm.cabl=2
 telephony.lteOnCdmaDevice=1
 persist.data.target=dpm1
 persist.radio.no_cons_man_roam=1
+ro.ril.multi_rat_capable=true
 
 #
 # System props for bluetooh
