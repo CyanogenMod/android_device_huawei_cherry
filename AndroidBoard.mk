@@ -34,7 +34,11 @@ endif
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := msm8916_defconfig
+    ifeq ($(TARGET_BUILD_VARIANT),user)
+      KERNEL_DEFCONFIG := msm8916-perf_defconfig
+    else
+      KERNEL_DEFCONFIG := msm8916_defconfig
+    endif
 endif
 
 include kernel/AndroidKernel.mk
