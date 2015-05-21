@@ -49,6 +49,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/qcom/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    device/qcom/msm8916_32/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \
     device/qcom/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
     device/qcom/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
     device/qcom/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
