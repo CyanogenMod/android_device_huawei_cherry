@@ -167,3 +167,6 @@ ro.sys.fw.bservice_age=5000
 #min/max cpu in core control
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
+
+# system property for PIP support
+persist.camera.pip.support=0
