@@ -162,7 +162,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.bt.sh \
-    init.qcom.fm.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
