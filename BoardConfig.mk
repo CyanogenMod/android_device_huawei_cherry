@@ -117,3 +117,6 @@ PROTOBUF_SUPPORTED := true
 
 #Use dlmalloc instead of jemalloc for mallocs
 MALLOC_IMPL := dlmalloc
+
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
