@@ -125,6 +125,9 @@ TARGET_POWERHAL_VARIANT := qcom
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
+
 # Ril
 TARGET_RIL_VARIANT := caf
 # Added to indicate that protobuf-c is supported in this build
