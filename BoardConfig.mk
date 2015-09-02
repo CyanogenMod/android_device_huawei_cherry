@@ -57,6 +57,10 @@ TARGET_USES_CSVT := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := false
 
+# FM
+AUDIO_FEATURE_ENABLED_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
 # GPS
 TARGET_NO_RPC := true
 
