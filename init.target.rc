@@ -152,6 +152,25 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch
 
+    start test_diag
+    write /proc/sys/vm/page-cluster 0
+
+    chown system system /sys/devices/12c.hw-dev-detect/dev_flag
+    chown system system /sys/touch_screen/glove_func/signal_disparity
+    chown system system /sys/touch_screen/easy_wakeup_gesture
+    chown system system /sys/touch_screen/easy_wakeup_supported_gestures
+    chown system system /sys/touch_screen/easy_wakeup_position
+
+    chown root system /sys/class/power_supply/battery/charging_enabled
+    chown root system /sys/module/qpnp_linear_charger/parameters/charge_no_limit
+    chmod 0664 /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/factory_diag
+    chown system system /sys/class/power_supply/battery/hot_current_limit
+    chown system system /sys/class/power_supply/battery/input_current_max
+
+    chown system system /sys/devices/8789.huawei_hall_sensor/enable_hall_sensor
+    chown root system /sys/devices/soc0/huawei_product
+
 service ppd /system/bin/mm-pp-daemon
     class late_start
     disabled
@@ -226,3 +245,8 @@ service dts_configurator /system/bin/dts_configurator
    user system
    group system
    oneshot
+
+# Huawei service
+service test_diag /system/bin/test_diag
+    user root
+    disabled
