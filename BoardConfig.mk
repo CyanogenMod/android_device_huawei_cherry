@@ -63,9 +63,6 @@ TARGET_USE_VENDOR_CAMERA_EXT := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
-# DPM NSRM Feature
-TARGET_LDPRELOAD := libNimsWrap.so
-
 # Enables CSVT
 TARGET_USES_CSVT := true
 
@@ -175,3 +172,6 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# inherit from the proprietary version
+-include vendor/huawei/cherry/BoardConfigVendor.mk

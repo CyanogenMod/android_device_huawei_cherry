@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Inherit proprietary blobs
+$(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
+
 LOCAL_PATH := device/huawei/cherry
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
