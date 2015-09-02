@@ -126,6 +126,7 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := true
 
 # Ril
+TARGET_RIL_VARIANT := caf
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
