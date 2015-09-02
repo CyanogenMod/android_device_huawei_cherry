@@ -40,6 +40,9 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # DPM NSRM Feature
 TARGET_LDPRELOAD := libNimsWrap.so
 
