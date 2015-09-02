@@ -159,6 +159,8 @@ MALLOC_IMPL := dlmalloc
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+BOARD_VOLD_MAX_PARTITIONS := 65
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
