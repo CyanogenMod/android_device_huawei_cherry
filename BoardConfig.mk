@@ -115,6 +115,9 @@ BOARD_USES_QCOM_HARDWARE := true
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
 #Use dlmalloc instead of jemalloc for mallocs
 MALLOC_IMPL := dlmalloc
 
