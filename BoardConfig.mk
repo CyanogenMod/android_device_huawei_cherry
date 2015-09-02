@@ -100,6 +100,7 @@ USE_OPENGL_RENDERER := true
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_cherry.c
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x80000000
