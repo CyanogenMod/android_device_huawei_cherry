@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),rendang)
+ifeq ($(TARGET_DEVICE),cherry)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
