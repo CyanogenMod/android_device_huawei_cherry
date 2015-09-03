@@ -92,7 +92,7 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../../stack/mm-camera-interface/inc \
         $(LOCAL_PATH)/../../stack/mm-jpeg-interface/inc \
         $(LOCAL_PATH)/../../../ \
-        $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface
+        $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface \
 #       $(TARGET_OUT_INTERMEDIATES)/include/mm-jpeg-interface\
 
 # may need remove this includes
@@ -107,7 +107,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc \
         $(call project-path-for,qcom-display)/libgenlock \
-        $(call project-path-for,qcom-display)/libstagefrighthw
+        $(call project-path-for,qcom-media)/libstagefrighthw
 
 # if debug service layer and up , use stub camera!
 LOCAL_C_INCLUDES += \
