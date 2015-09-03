@@ -19,6 +19,9 @@
 
 LOCAL_PATH := device/huawei/cherry
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := c8817d,g620s,cherry
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
