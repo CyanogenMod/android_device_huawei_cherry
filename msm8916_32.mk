@@ -197,6 +197,10 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     libtinyxml
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8916
+
 # INIT
 PRODUCT_PACKAGES += \
     init.qcom.modem_links.sh \
