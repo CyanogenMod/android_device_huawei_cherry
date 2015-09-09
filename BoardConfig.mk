@@ -117,6 +117,9 @@ TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 TARGET_KERNEL_CONFIG := hw8916_defconfig
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Logging
 TARGET_USES_LOGD := false
 
