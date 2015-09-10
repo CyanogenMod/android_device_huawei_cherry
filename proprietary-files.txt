@@ -639,9 +639,6 @@ etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
-# WLAN
-lib/libwcnss_qmi.so
-
 # Huawei
 bin/test_diag
 bin/rmt_oeminfo

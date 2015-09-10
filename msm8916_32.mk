@@ -295,7 +295,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     libwpa_client \
     wcnss_service \
-    libwcnss_qmi \
     libQWiFiSoftApCfg \
     libqsap_sdk \
     wpa_supplicant_overlay.conf \
