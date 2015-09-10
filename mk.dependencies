@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "android_vendor_huawei_cherry",
+    "target_path": "vendor/huawei/cherry"
+  },
+  {
+    "repository": "android_kernel_huawei_msm8916",
+    "target_path": "kernel/huawei/msm8916"
+  },
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  },
+  {
+    "repository": "android_hardware_qcom_fm",
+    "target_path": "hardware/qcom/fm"
+  },
+  {
+    "repository": "android_external_mm-dash",
+    "target_path": "external/mm-dash"
+  }
+]
