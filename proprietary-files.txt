@@ -29,6 +29,7 @@ lib/liboeminfo.so
 lib/libmmcamera_interface.so
 lib/libmm-qcamera.so
 lib/libcutilz.so
+vendor/lib/libqc-opt.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
