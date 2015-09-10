@@ -304,7 +304,8 @@ PRODUCT_PACKAGES += \
     hostapd_cli \
     hostapd_default.conf \
     hostapd.deny \
-    hostapd.accept
+    hostapd.accept \
+    dhcpcd.conf
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer \
