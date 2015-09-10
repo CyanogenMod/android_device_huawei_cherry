@@ -18,4 +18,6 @@ $(call inherit-product, device/huawei/cherry/msm8916_32.mk)
 # Inherit some common MK stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
+BOARD_HARDWARE_CLASS := device/huawei/cherry/mkhw
+
 PRODUCT_NAME := mk_cherry
