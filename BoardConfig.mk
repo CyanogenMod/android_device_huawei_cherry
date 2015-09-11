@@ -153,7 +153,14 @@ BOARD_SEPOLICY_DIRS += \
     device/huawei/cherry/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    netd.te
+    bootanim.te \
+    diag.te \
+    file.te \
+    file_contexts \
+    init.te \
+    mm-qcamerad.te \
+    netd.te \
+    system_server.te
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true

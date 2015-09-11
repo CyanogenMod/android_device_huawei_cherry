@@ -1,0 +1,5 @@
+allow diag self:socket { write read create ioctl bind };
+#allow diag self:capability mknod;
+allow diag smem_log_device:chr_file { read write open ioctl };
+allow diag device:dir { write add_name remove_name };
+#allow diag device:chr_file { create write open unlink };
