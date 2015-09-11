@@ -574,9 +574,6 @@ vendor/lib/libmm-abl-oem.so
 bin/irsc_util
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
-lib/libqmi_nv_api.so
-lib/libqmi_oem_api.so
-lib/libqmi_oem_svc.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
