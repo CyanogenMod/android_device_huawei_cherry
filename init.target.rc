@@ -254,3 +254,4 @@ service dts_configurator /system/bin/dts_configurator
 service test_diag /system/bin/test_diag
     user root
     disabled
+    seclabel u:r:diag:s0
