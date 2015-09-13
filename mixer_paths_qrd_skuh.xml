@@ -51,9 +51,9 @@
     <ctl name="TTY Mode" value="Off" />
     <ctl name="HPHL Volume" value="9" />
     <ctl name="HPHR Volume" value="9" />
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="88" />
+    <ctl name="RX2 Digital Volume" value="88" />
+    <ctl name="RX3 Digital Volume" value="88" />
     <ctl name="IIR1 INP1 Volume" value="84" />
     <ctl name="IIR1 INP2 Volume" value="84" />
     <ctl name="IIR1 INP3 Volume" value="84" />
@@ -557,7 +557,7 @@
     <path name="speaker">
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SPK DAC Switch" value="1" />
-        <ctl name="RX3 Digital Volume" value="84" />
+        <ctl name="RX3 Digital Volume" value="88" />
     </path>
 
     <path name="speaker-mic">
@@ -571,7 +571,7 @@
         <ctl name="EAR PA Boost" value="ENABLE" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="88" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
@@ -589,8 +589,8 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="RX1 Digital Volume" value="76" />
-    	<ctl name="RX2 Digital Volume" value="76" />
+        <ctl name="RX1 Digital Volume" value="88" />
+    	<ctl name="RX2 Digital Volume" value="88" />
     </path>
 
     <path name="headset-mic">
@@ -627,12 +627,12 @@
         <path name="sidetone-handset" />
         <path name="handset" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="88" />
     </path>
 
     <path name="voice-speaker">
         <path name="speaker" />
-        <ctl name="RX3 Digital Volume" value="84" />
+        <ctl name="RX3 Digital Volume" value="88" />
     </path>
 
     <path name="voice-speaker-mic">
@@ -643,8 +643,8 @@
 
     <path name="voice-headphones">
         <path name="headphones" />
-	<ctl name="RX1 Digital Volume" value="84" />
-	<ctl name="RX2 Digital Volume" value="84" />
+	<ctl name="RX1 Digital Volume" value="88" />
+	<ctl name="RX2 Digital Volume" value="88" />
     </path>
 
     <path name="voice-headset-mic">
@@ -656,9 +656,9 @@
     <path name="speaker-and-headphones">
         <path name="headphones" />
         <path name="speaker" />
-	<ctl name="RX1 Digital Volume" value="83" />
-	<ctl name="RX2 Digital Volume" value="83" />
-	<ctl name="RX3 Digital Volume" value="83" />
+	<ctl name="RX1 Digital Volume" value="88" />
+	<ctl name="RX2 Digital Volume" value="88" />
+	<ctl name="RX3 Digital Volume" value="88" />
     </path>
 
     <path name="usb-headphones">
