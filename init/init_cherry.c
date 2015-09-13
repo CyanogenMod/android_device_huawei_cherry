@@ -66,7 +66,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "C8817D");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "8");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.config.is_cdma_phone", "true");
         property_set("ro.cdma.home.operator.numeric", "46003");
@@ -83,7 +82,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.name", "C8817E");
         property_set("ro.product.device", "C8817E");
         property_set("ro.build.product", "C8817E");
-        property_set("ro.telephony.default_network", "8");
         property_set("ro.build.description", "C8817E-user 4.4.4 GRJ90 C92B380 release-keys");
         property_set("ro.build.fingerprint", "Huawei/C8817E/hwC8817E:4.4.4/HuaweiC8817E/C92B380:user/release-keys");
     }
@@ -95,7 +93,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "G621-TL00");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "17");
         property_set("ro.config.dsds_mode", "umts_gsm");
         property_set("ro.ril.multi_rat_capable","true");
         property_set("ro.build.description", "G621-TL00-user 4.4.4 GRJ90 C01B361SP01 release-keys");
@@ -109,7 +106,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "G620S-UL00");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "9");
         property_set("ro.config.dsds_mode", "umts_gsm");
         property_set("ro.ril.multi_rat_capable","true");
         property_set("ro.build.description", "G620S-UL00-user 4.4.4 GRJ90 C17B246 release-keys");
@@ -121,7 +117,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.name", "G620S-L01");
         property_set("ro.product.device", "G620S-L01");
         property_set("ro.build.product", "G620S-L01");
-        property_set("ro.telephony.default_network", "9");
         property_set("ro.build.description", "G620S-L01-user 4.4.4 GRJ90 C00B380 release-keys");
         property_set("ro.build.fingerprint", "Huawei/G620S-L01/hwG620S-L01:4.4.4/HuaweiG620S-L01/C00B380:user/release-keys");
     }
@@ -133,7 +128,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "Che1-CL20");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "22");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.cdma.home.operator.numeric", "46003");
         property_set("ro.config.cdma.globalMode", "true");
@@ -150,7 +144,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "Che1-CL10");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "8");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.cdma.home.operator.numeric", "46003");
         property_set("ro.config.cdma.globalMode", "true");
@@ -168,7 +161,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "Che1-L04");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("ro.telephony.default_network", "9");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.config.dsds_mode", "umts_gsm");
         property_set("ro.com.android.dataroaming","true");

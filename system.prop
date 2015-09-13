@@ -17,6 +17,7 @@ persist.rild.nitz_short_ons_3=
 persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
+ro.telephony.default_network=22
 
 debug.sf.hw=1
 debug.egl.hw=1
