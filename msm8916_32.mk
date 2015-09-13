@@ -315,12 +315,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
-    ro.sf.lcd_density=320
+    ro.sf.lcd_density=320 \
+    persist.sys.usb.config=mtp
 
 PRODUCT_PROPERTY_OVERRIDES += \
-       dalvik.vm.heapgrowthlimit=128m \
-       dalvik.vm.heapminfree=6m \
-       dalvik.vm.heapstartsize=14m
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapminfree=6m \
+    dalvik.vm.heapstartsize=14m
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
