@@ -1204,26 +1204,8 @@ esac
 
 # Post-setup services
 case "$target" in
-    "msm8660" | "msm8960" | "msm8226" | "msm8610" | "mpq8092" )
+    "msm8660" | "msm8960" | "msm8226" | "msm8610" | "mpq8092" | "msm8916" )
         start mpdecision
-    ;;
-    "msm8916")
-        if [ -f /sys/devices/soc0/soc_id ]; then
-           soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-           soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
-        case $soc_id in
-            "239" | "241" | "263" | "268" | "269" | "270" | "271")
-            setprop ro.min_freq_0 960000
-            setprop ro.min_freq_4 800000
-	;;
-	    "206" | "247" | "248" | "249" | "250" | "233" | "240" | "242")
-            setprop ro.min_freq_0 800000
-        ;;
-        esac
-        #start perfd after setprop
-        start perfd # start perfd on 8916, 8939 and 8929
     ;;
     "msm8909")
 	start perfd
