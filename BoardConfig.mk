@@ -17,8 +17,6 @@
 # Product-specific compile-time definitions.
 #
 
-LOCAL_PATH := device/huawei/cherry
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := c8817d,cherry,CHERRY,C8817D,C8817E,G621-TL00,G620S-UL00,Che1-CL20,Che1-CL10,Che1-L04
 
@@ -67,6 +65,9 @@ TARGET_USE_VENDOR_CAMERA_EXT := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
+
+# CMHW
+BOARD_HARDWARE_CLASS := device/huawei/cherry/cmhw
 
 # Enables CSVT
 TARGET_USES_CSVT := true

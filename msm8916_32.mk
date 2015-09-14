@@ -13,12 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit proprietary blobs
-$(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
-
-LOCAL_PATH := device/huawei/cherry
-
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # media_profiles and media_codecs xmls for 8916
 PRODUCT_COPY_FILES += \
@@ -93,23 +92,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/WCNSS_wlan_dictionary.dat:system/etc/wifi/WCNSS_wlan_dictionary.dat \
     $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-
-PRODUCT_NAME := full_cherry
-PRODUCT_DEVICE := cherry
-PRODUCT_MANUFACTURER := HUAWEI
-PRODUCT_MODEL := CHERRY
-
-PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
 # ANT+ stack
 PRODUCT_PACKAGES += \
@@ -117,10 +100,6 @@ PRODUCT_PACKAGES += \
     libantradio \
     antradio_app \
     com.dsi.ant.antradio_library
-
-# APPOPS_POLICY
-PRODUCT_PACKAGES += \
-    appops_policy.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -228,9 +207,6 @@ PRODUCT_PACKAGES += \
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
     librs_jni
 
 # KEYPAD
@@ -266,10 +242,6 @@ PRODUCT_PACKAGES += \
 # Ril
 PRODUCT_PACKAGES += \
     libxml2
-
-# Stk
-PRODUCT_PACKAGES += \
-    Stk
 
 # USB
 PRODUCT_PACKAGES += \
@@ -311,3 +283,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
+
+# Inherit proprietary blobs
+$(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
