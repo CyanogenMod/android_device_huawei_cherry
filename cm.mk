@@ -12,12 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from nx510j device
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
+# Inherit from these products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit device configuration
 $(call inherit-product, device/huawei/cherry/msm8916_32.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-BOARD_HARDWARE_CLASS := device/huawei/cherry/cmhw
-
 PRODUCT_NAME := cm_cherry
+PRODUCT_DEVICE := cherry
+PRODUCT_MANUFACTURER := Huawei
+PRODUCT_MODEL := 4x
+
+PRODUCT_GMS_CLIENTID_BASE := android-huawei
