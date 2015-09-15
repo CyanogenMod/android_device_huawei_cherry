@@ -26,27 +26,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/media/media_codecs_8916.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_8939.xml:system/etc/media_codecs_8939.xml \
-    $(LOCAL_PATH)/media/media_codecs_8929.xml:system/etc/media_codecs_8929.xml
+    $(LOCAL_PATH)/media/media_codecs_8916.xml:system/etc/media_codecs.xml
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    $(LOCAL_PATH)/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \
-    $(LOCAL_PATH)/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    $(LOCAL_PATH)/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    $(LOCAL_PATH)/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    $(LOCAL_PATH)/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    $(LOCAL_PATH)/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    $(LOCAL_PATH)/mixer_paths_skul.xml:system/etc/mixer_paths_skul.xml \
-    $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    $(LOCAL_PATH)/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    $(LOCAL_PATH)/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml
+    $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Audio calibration
 PRODUCT_COPY_FILES += \
