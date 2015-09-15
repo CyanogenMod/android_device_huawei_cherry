@@ -1,0 +1,2 @@
+allow mpdecision socket_device:dir { write add_name };
+allow mpdecision socket_device:sock_file { create };
