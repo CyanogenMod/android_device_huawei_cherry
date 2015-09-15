@@ -176,6 +176,9 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
 
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chmod 0644 /sys/class/timed_output/vibrator/vtg_level
+
 service ppd /system/bin/mm-pp-daemon
     class late_start
     disabled
