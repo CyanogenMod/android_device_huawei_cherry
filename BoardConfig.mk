@@ -75,7 +75,7 @@ BOARD_HARDWARE_CLASS := device/huawei/cherry/cmhw
 TARGET_USES_CSVT := true
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
+TARGET_HW_DISK_ENCRYPTION := true
 
 # FM
 AUDIO_FEATURE_ENABLED_FM := true
