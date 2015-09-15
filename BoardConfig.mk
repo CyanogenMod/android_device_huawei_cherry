@@ -164,6 +164,7 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     init.te \
     mm-qcamerad.te \
+    mpdecision.te \
     netd.te \
     system_server.te
 
