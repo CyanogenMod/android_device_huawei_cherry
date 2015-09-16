@@ -1,6 +1,3 @@
-# CmHardwareService access to Color Calibration
-allow system_server display_sysfs:file rw_file_perms;
-
 # for Settings' access to TapToWake
 allow system_server touchpanel_sysfs:file rw_file_perms;
 allow system_server touchpanel_sysfs:dir { search };
@@ -9,5 +6,3 @@ allow system_server shell_exec:file { read open execute execute_no_trans };
 
 # for Settings' access to VibratorHW
 allow system_server vibeamp_sysfs:file rw_file_perms;
-
-allow system_server time_daemon:unix_stream_socket connectto;
