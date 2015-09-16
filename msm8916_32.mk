@@ -165,12 +165,9 @@ PRODUCT_PACKAGES += \
     init.qcom.fm.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.syspart_fixup.sh \
     init.qcom.rc \
     init.qcom.sh \
-    init.qcom.class_core.sh \
     init.class_main.sh \
-    init.qcom.wifi.sh \
     vold.fstab \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
