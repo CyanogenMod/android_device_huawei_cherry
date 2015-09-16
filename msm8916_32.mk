@@ -160,7 +160,6 @@ PRODUCT_PACKAGES += \
 
 # INIT
 PRODUCT_PACKAGES += \
-    init.qcom.modem_links.sh \
     init.target.rc \
     init.qcom.bt.sh \
     init.qcom.fm.sh \
