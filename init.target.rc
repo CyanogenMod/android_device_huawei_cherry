@@ -172,10 +172,6 @@ on boot
     chown system system /sys/devices/8789.huawei_hall_sensor/enable_hall_sensor
     chown root system /sys/devices/soc0/huawei_product
 
-    # color
-    chown system system /sys/devices/virtual/graphics/fb0/rgb
-    chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
-
     chown system system /sys/class/timed_output/vibrator/vtg_level
     chmod 0644 /sys/class/timed_output/vibrator/vtg_level
 
