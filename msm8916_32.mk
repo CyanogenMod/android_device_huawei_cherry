@@ -175,6 +175,12 @@ PRODUCT_PACKAGES += \
     init.qcom.zram.sh \
     init.qcom.bms.sh
 
+# IPv6
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
