@@ -260,7 +260,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=row
+    sys.io.scheduler=bfq
 
 # Inherit proprietary blobs
 $(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
