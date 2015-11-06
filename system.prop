@@ -19,6 +19,7 @@ ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Start in cdma mode
 ro.telephony.default_network=22
+ro.telephony.ril.config=simactivation
 
 debug.sf.hw=1
 debug.egl.hw=1
