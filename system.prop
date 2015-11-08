@@ -20,6 +20,7 @@ DEVICE_PROVISIONED=1
 # Start in cdma mode
 ro.telephony.default_network=22
 ro.telephony.ril.config=simactivation
+persist.data.qmi.adb_logmask=0
 
 debug.sf.hw=1
 debug.egl.hw=1
