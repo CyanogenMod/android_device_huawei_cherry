@@ -90,6 +90,7 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
+    mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/drm 0770 system system
     mkdir /persist/misc 0770 system system
 
@@ -395,6 +396,7 @@ service qcom-c_main-sh /system/bin/sh /init.class_main.sh
 
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
+    start config_bt_addr
     start config_bluetooth
     start wcnss-service
 
@@ -427,6 +429,12 @@ service rfs_access /system/bin/rfs_access
 service tftp_server /system/bin/tftp_server
    class main
    user root
+
+service config_bt_addr /system/bin/btnvtool -O
+    class core
+    user bluetooth
+    group bluetooth radio
+    oneshot
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
