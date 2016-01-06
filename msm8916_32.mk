@@ -134,6 +134,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    rmnetcli
+
 # FM
 PRODUCT_PACKAGES += \
     qcom.fmradio \
