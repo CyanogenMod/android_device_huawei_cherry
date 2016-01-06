@@ -134,12 +134,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs \
-    e2fsck
-
 # FM
 PRODUCT_PACKAGES += \
     qcom.fmradio \
@@ -181,19 +175,9 @@ PRODUCT_PACKAGES += \
     init.qti.ims.sh \
     init.qcom.bms.sh
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    librs_jni
 
 # KEYPAD
 PRODUCT_PACKAGES += \
@@ -213,13 +197,10 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxSwVencMpeg4 \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVdpp \
     libOmxVenc \
     libOmxVidEnc \
-    libstagefrighthw \
-    libdashplayer \
-    qcmediaplayer
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
@@ -234,10 +215,6 @@ PRODUCT_PACKAGES += \
     sensors.msm8916 \
     libcalmodule_common \
     calmodule.cfg
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -257,7 +234,6 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf
 
 PRODUCT_BOOT_JARS += \
-    qcmediaplayer \
     qcom.fmradio
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -265,8 +241,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
-    ro.sf.lcd_density=320 \
-    persist.sys.usb.config=mtp
+    ro.sf.lcd_density=320
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
