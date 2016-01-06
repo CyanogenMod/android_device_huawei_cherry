@@ -223,6 +223,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2
 
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.msm8916 \
+    libcalmodule_common \
+    calmodule.cfg
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
