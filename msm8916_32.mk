@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,13 +19,18 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
 # media_profiles and media_codecs xmls for 8916
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/media/media_codecs_8916.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/media/media_codecs_8916.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media/media_codecs_performance_8916_32.xml:system/etc/media_codecs_performance.xml
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
@@ -87,10 +92,10 @@ PRODUCT_COPY_FILES += \
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/WCNSS_wlan_dictionary.dat:system/etc/wifi/WCNSS_wlan_dictionary.dat \
-    $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
+    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -173,6 +178,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     fstab.qcom \
     init.qcom.zram.sh \
+    init.qti.ims.sh \
     init.qcom.bms.sh
 
 # IPv6
