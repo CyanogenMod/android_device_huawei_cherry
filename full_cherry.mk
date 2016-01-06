@@ -12,6 +12,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_cherry.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/huawei/cherry/msm8916_32.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := cherry
+PRODUCT_NAME := full_cherry
+PRODUCT_BRAND := Huawei
+PRODUCT_MODEL := cherry
+PRODUCT_MANUFACTURER := Huawei
