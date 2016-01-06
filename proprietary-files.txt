@@ -14,6 +14,7 @@ vendor/lib/libFlacSwDec.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
+vendor/lib/libvoice-svc.so
 
 # Battery
 bin/vm_bms
@@ -490,10 +491,45 @@ vendor/lib/libmmcamera_sunny_q8v18a_eeprom.so
 vendor/lib/libmmcamera_sunny_q13v04b_eeprom.so
 vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 
+# CNE
+bin/cnd
+etc/cne/andsfCne.xml
+etc/cne/SwimConfig.xml
+etc/permissions/cneapiclient.xml
+etc/permissions/com.quicinc.cne.xml
+-framework/cneapiclient.jar
+-framework/com.quicinc.cne.jar
+-priv-app/CNEService/CNEService.apk
+vendor/lib/libcne.so
+vendor/lib/libChamomilePA.so
+vendor/lib/libcneapiclient.so
+vendor/lib/libcneconn.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libNimsWrap.so
+vendor/lib/libvendorconn.so
+vendor/lib/libwqe.so
+vendor/lib/libxml.so
+vendor/lib/liblowi_wifihal_nl.so
+vendor/lib/liblowi_wifihal.so
+
+# DPM
+bin/dpmd
+etc/dpm/dpm.conf
+etc/dpm/nsrm/NsrmConfiguration.xml
+etc/permissions/dpmapi.xml
+-framework/com.qti.dpmframework.jar
+-framework/dpmapi.jar
+vendor/lib/libdpmctmgr.so
+vendor/lib/libdpmfdmgr.so
+vendor/lib/libdpmframework.so
+vendor/lib/libdpmnsrm.so
+
 # DRM
 bin/qseecomd
 lib/libdrmdecrypt.so
+vendor/lib/libprdrmdecrypt.so
 vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/libdpmtcm.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
@@ -505,7 +541,6 @@ vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # GPS
-bin/location-mq
 etc/permissions/com.qualcomm.location.xml
 -lib/libloc_api_v02.so
 -lib/libloc_ds_api.so
@@ -516,11 +551,11 @@ vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 vendor/lib/liblocationservice.so
 vendor/lib/liblowi_client.so
+vendor/lib/libQtiTether.so
 vendor/lib/libquipc_os_api.so
 vendor/lib/libulp2.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_ulp_adaptor.so
-vendor/lib/libxtwifi_zpp_adaptor.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -528,11 +563,16 @@ vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libQTapGLES.so
+vendor/lib/egl/libRBEGL_adreno.so
+vendor/lib/egl/libRBGLESv1_CM_adreno.so
+vendor/lib/egl/libRBGLESv2_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
+vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
 vendor/lib/libRSDriver_adreno.so
@@ -546,8 +586,55 @@ vendor/lib/libscale.so
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 
+#IMS
+#ims.xml
+#imslibrary
+-vendor/app/ims/ims.apk
+#vendor/app/ims/lib/arm/libimscamera_jni.so
+#vendor/app/ims/lib/arm/libimsmedia_jni.so
+vendor/lib/libimscamera_jni.so
+vendor/lib/libimsmedia_jni.so
+#etc/permissions/qti_permissions.xml
+
+#IMS_VT
+vendor/lib/lib-imsvt.so
+vendor/lib/lib-imscamera.so
+vendor/lib/libtzplayready.so
+vendor/lib/libvcel.so
+
+#IMS_SETTINGS
+vendor/lib/lib-imss.so
+vendor/lib/lib-rcsimssjni.so
+
+#IMS_RCS
+vendor/lib/lib-imsxml.so
+vendor/lib/lib-imsrcs.so
+vendor/lib/lib-rcsjni.so
+
+#IMS_CONNECTIONMANAGER
+bin/imscmservice
+vendor/lib/lib-ims-rcscmjni.so
+vendor/lib/lib-imsrcscmservice.so
+vendor/lib/lib-imsrcscmclient.so
+vendor/lib/lib-imsrcscm.so
+#lib-ims-rcscmjni
+-framework/imscmlibrary.jar
+#etc/permissions/imscm.xml
+
+#IMS_NEWARCH
+bin/imsdatadaemon
+bin/imsqmidaemon
+bin/ims_rtp_daemon
+vendor/lib/lib-dplmedia.so
+vendor/lib/lib-imsdpl.so
+vendor/lib/lib-imsqimf.so
+vendor/lib/lib-imsSDP.so
+vendor/lib/lib-rtpcommon.so
+vendor/lib/lib-rtpcore.so
+vendor/lib/lib-rtpdaemoninterface.so
+vendor/lib/lib-rtpsl.so
+
 # Media
-vendor/lib/libDivxDrm.so
 vendor/lib/libExtendedExtractor.so
 -vendor/lib/libHevcSwDecoder.so
 vendor/lib/libI420colorconvert.so
@@ -557,11 +644,9 @@ vendor/lib/libmm-color-convertor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libSHIMDivxDrm.so
 
 # Perf
-bin/msm_irqbalance
-bin/mpdecision
+vendor/bin/perfd
 vendor/lib/libqti-perfd-client.so
 
 # Postprocessing
@@ -592,7 +677,7 @@ vendor/lib/libqmi.so
 vendor/lib/libsmemlog.so
 
 # Radio
--app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd
 bin/qmuxd
@@ -614,13 +699,8 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 
-# Sensors
-lib/hw/sensors.msm8916.so
-vendor/etc/calmodule.cfg
-vendor/lib/libcalmodule_akm.so
-
 # Thermal
-bin/thermal-engine
+vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
@@ -640,8 +720,8 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Huawei
-bin/test_diag
 bin/rmt_oeminfo
+bin/test_diag
 etc/firmware/cherry_gis_fw.img
 etc/firmware/cherry_ofilm_fw.img
 etc/firmware/cherry_yassy_fw.img

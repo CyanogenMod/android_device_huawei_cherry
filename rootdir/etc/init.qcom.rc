@@ -35,24 +35,10 @@ on early-init
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0700 root root
-    mkdir /storage/usbotg 0700 root root
-
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/sdcard1
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
 
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -64,6 +50,7 @@ on early-boot
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
     chown root audio /sys/kernel/boot_adsp/boot
+    exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -74,8 +61,10 @@ on boot
     chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_btwrite
     chown system system /sys/module/sco/parameters/disable_esco
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
+    chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/module/bluetooth_power/parameters/power
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
+    chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /proc/bluetooth/sleep/proto
     chown bluetooth bluetooth /dev/ttyHS0
@@ -102,6 +91,10 @@ on boot
     chmod 2770 /dev/socket/qmux_gps
 
     mkdir /persist/drm 0770 system system
+    mkdir /persist/misc 0770 system system
+
+    #Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
 
     setprop wifi.interface wlan0
 
@@ -176,9 +169,6 @@ on boot
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
-    # Socket location for RIDL
-    mkdir /dev/socket/RIDL 2770 system system
-
     # Mark the copy complete flag to not completed
     write /data/misc/radio/copy_complete 0
     chown radio radio /data/misc/radio/copy_complete
@@ -189,11 +179,8 @@ on post-fs-data
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
 
-    # we will remap this as /mnt/sdcard with the sdcard fuse tool
+    #Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
-
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
@@ -295,12 +282,17 @@ on post-fs-data
     # Sensor
     mkdir /persist/sensors 0770 system system
 
+    #Create FM dir for patchdownloader
+    mkdir /data/misc/fm 0770 system system
+    chmod 0770 /data/misc/fm
+
     # RIDL data
     mkdir /data/misc/SelfHost/ 0710 system shell
     mkdir /data/misc/SelfHost/QCLogs/ 2750 system shell
     mkdir /data/misc/SelfHost/QCLogs/temp/ 0700 system shell
     mkdir /data/misc/SelfHost/storage/ 0700 system shell
     mkdir /data/misc/SelfHost/Running/ 2750 system shell
+    mkdir /data/misc/SelfHost/socket/ 2770 system system
 
 service qcomsysd /system/bin/qcom-system-daemon
     class main
@@ -322,6 +314,7 @@ on property:persist.sys.ssr.restart_level=*
 
 on property:persist.sys.ssr.enable_ramdumps=1
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
+    mkdir /data/ramdump 770 system system
     start ss_ramdump
 
 on property:persist.sys.ssr.enable_ramdumps=0
@@ -331,6 +324,9 @@ on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
 
 on property:persist.radio.atfwd.start=false
+    stop atfwd
+
+on property:radio.atfwd.start=false
     stop atfwd
 
 service qcom-debug /system/bin/sh /system/etc/init.qcom.debug.sh
@@ -429,7 +425,7 @@ service rfs_access /system/bin/rfs_access
    group system net_raw
 
 service tftp_server /system/bin/tftp_server
-   class core
+   class main
    user root
 
 on property:wc_transport.start_hci=true
@@ -519,7 +515,7 @@ service qmiproxy /system/bin/qmiproxy
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps nfc qcom_diag
     disabled
 
 service netmgrd /system/bin/netmgrd
@@ -647,6 +643,16 @@ service ptt_ffbm /system/bin/ptt_socket_app -f -d
     disabled
     oneshot
 
+service wifi_ftmd /system/bin/wifi_ftmd
+    user system
+    group system inet net_admin
+    socket wififtmd_server dgram 0660 system system
+    disabled
+    oneshot
+
+on property:wifi.ftmd.load=true
+    insmod /system/lib/modules/wlan.ko con_mode=5
+
 service cnss_diag /system/bin/cnss_diag --q
     class main
     user root
@@ -693,7 +699,7 @@ service loc_launcher /system/bin/loc_launcher
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
-    user root
+    user system
     group system
     disabled
     oneshot
@@ -725,6 +731,13 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     disabled
     oneshot
 
+service qti-testscripts /system/bin/sh /system/etc/init.qcom.testscripts.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+
 service wifi-sdio-on /system/bin/sh /system/etc/init.qcom.sdio.sh
     class late_start
     group wifi inet
@@ -743,14 +756,17 @@ service config-zram /system/bin/sh /system/etc/init.qcom.zram.sh
    disabled
    oneshot
 
-on property:sys.boot_completed=1
-    start qcom-post-boot
-    start config-zram
-
 service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
+    disabled
     group system radio
+
+on property:sys.boot_completed=1
+    start qcom-post-boot
+    start qti-testscripts
+    start config-zram
+    start atfwd
 
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
@@ -791,7 +807,7 @@ service ril-daemon2 /system/bin/rild -c 2
     socket rild-debug2 stream 660 radio system
     user root
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag log
 
 service ril-daemon3 /system/bin/rild -c 3
     class main
@@ -799,30 +815,31 @@ service ril-daemon3 /system/bin/rild -c 3
     socket rild-debug3 stream 660 radio system
     user root
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag log
+
+service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service usb_uicc_daemon /system/bin/usb_uicc_client
+    class main
+    user system
+    group system log net_raw
+    oneshot
+
+on property:sys.usb_uicc.enabled=1
+    start usb_uicc_enable
+
+on property:sys.usb_uicc.enabled=0
+    start usb_uicc_enable
 
 service profiler_daemon /system/bin/profiler_daemon
     class late_start
     user root
     group root
     disabled
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 /mnt/media_rw/usbotg /storage/usbotg
-    class late_start
-    disabled
-
-# Binding fuse mount point to /storage/emulated/legacy
-on property:init.svc.sdcard=running
-    wait /mnt/shell/emulated/0
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
 
 service hcidump /system/bin/sh /system/etc/hcidump.sh
     user bluetooth
@@ -930,12 +947,19 @@ on property:sys.wfdservice=disable
 service RIDL /system/vendor/bin/RIDLClient.exe
     class late_start
     oneshot
-    user system
-    group system inet log sdcard_r sdcard_rw
-    # removed for security team - misc bluetooth radio gps wifi diag media_rw
-    # limited to 12 groups.  Unused: audio usb qcom_diag net_bt_admin net_bt_stac net_raw net_admin
-
-# Huawei service
-service rmt_oeminfo /system/bin/rmt_oeminfo
-    class core
     user root
+    group root inet log sdcard_r sdcard_rw qcom_diag radio net_raw
+    # removed for security team - misc bluetooth gps wifi diag media_rw
+    # limited to 12 groups.  Unused: audio usb net_bt_admin net_bt_stac net_admin
+
+# bugreport is triggered by developer options
+service bugreport /system/bin/dumpstate -d -p -B \
+        -o /data/data/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+
+service fidodaemon /system/vendor/bin/fidodaemon
+    class late_start
+    user system
+    group system

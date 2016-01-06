@@ -57,16 +57,15 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     while (fgets(model, 100, fp))
         if (strstr(model, "huawei_fac_product_name") != NULL)
             break;
+    fclose(fp);
 
     /* C8817D */
     if (strstr(model, "C8817D") != NULL) {
         property_set("ro.product.model", "C8817D");
-        property_set("ro.product.name", "C8817D");
         property_set("ro.product.device", "C8817D");
         property_set("ro.build.product", "C8817D");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.config.is_cdma_phone", "true");
         property_set("ro.cdma.home.operator.numeric", "46003");
         property_set("ro.config.cdma.globalMode", "true");
@@ -78,8 +77,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
     /* C8817E */
     else if (strstr(model, "C8817E") != NULL) {
-        property_set("ro.product.model", "HUAWEI C8817E");
-        property_set("ro.product.name", "C8817E");
+        property_set("ro.product.model", "C8817E");
         property_set("ro.product.device", "C8817E");
         property_set("ro.build.product", "C8817E");
         property_set("ro.build.description", "C8817E-user 4.4.4 GRJ90 C92B380 release-keys");
@@ -88,7 +86,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* G621-TL00 */
     else if (strstr(model, "G621-TL00") != NULL) {
         property_set("ro.product.model", "G621-TL00");
-        property_set("ro.product.name", "G621-TL00");
         property_set("ro.product.device", "G621-TL00");
         property_set("ro.build.product", "G621-TL00");
         property_set("persist.radio.multisim.config", "dsds");
@@ -101,7 +98,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* G620S-UL00 */
     else if (strstr(model, "G620S-UL") != NULL) {
         property_set("ro.product.model", "G620S-UL00");
-        property_set("ro.product.name", "G620S-UL00");
         property_set("ro.product.device", "G620S-UL00");
         property_set("ro.build.product", "G620S-UL00");
         property_set("persist.radio.multisim.config", "dsds");
@@ -114,7 +110,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* G620S-L01 */
     else if (strstr(model, "G620S-L01") != NULL) {
         property_set("ro.product.model", "G620S-L01");
-        property_set("ro.product.name", "G620S-L01");
         property_set("ro.product.device", "G620S-L01");
         property_set("ro.build.product", "G620S-L01");
         property_set("ro.build.description", "G620S-L01-user 4.4.4 GRJ90 C00B380 release-keys");
@@ -123,7 +118,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* Che1-CL20 */
     else if (strstr(model, "Che1-CL20") != NULL) {
         property_set("ro.product.model", "Che1-CL20");
-        property_set("ro.product.name", "4x");
         property_set("ro.product.device", "Che1-CL20");
         property_set("ro.build.product", "Che1-CL20");
         property_set("persist.radio.multisim.config", "dsds");
@@ -139,7 +133,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* Che1-CL10 */
     else if (strstr(model, "Che1-CL10") != NULL) {
         property_set("ro.product.model", "Che1-CL10");
-        property_set("ro.product.name", "Che1-CL10");
         property_set("ro.product.device", "Che1-CL10");
         property_set("ro.build.product", "Che1-CL10");
         property_set("persist.radio.multisim.config", "dsds");
@@ -156,7 +149,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     /* Che1-L04 */
     else if (strstr(model, "Che1-L04") != NULL) {
         property_set("ro.product.model", "Che1-L04");
-        property_set("ro.product.name", "Che1-L04");
         property_set("ro.product.device", "Che1-L04");
         property_set("ro.build.product", "Che1-L04");
         property_set("persist.radio.multisim.config", "dsds");
