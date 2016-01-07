@@ -126,7 +126,8 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmmjpeg_interface \
     libqomx_core \
-    libhuawei_cutilz
+    libhuawei_cutilz \
+    libboringssl-compat
 
 # Charger
 PRODUCT_PACKAGES += \
