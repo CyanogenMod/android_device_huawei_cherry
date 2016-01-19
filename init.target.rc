@@ -38,7 +38,7 @@ on post-fs
     export LD_PRELOAD libNimsWrap.so
 
     # Symbols required for huawei blobs
-    export LD_SHIM_LIBS "/system/lib/libcutilz.so|libhuawei_cutilz.so:/system/lib/libcrypto.so|libboringssl-compat.so"
+    export LD_SHIM_LIBS "/system/lib/libcutilz.so|libhuawei_cutilz.so"
 
 on fs
     wait /dev/block/bootdevice
