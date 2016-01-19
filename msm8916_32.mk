@@ -127,7 +127,6 @@ PRODUCT_PACKAGES += \
     libmmjpeg_interface \
     libqomx_core \
     libhuawei_cutilz \
-    libboringssl-compat \
     libstlport
 
 # Charger
