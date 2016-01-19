@@ -171,9 +171,6 @@ include device/qcom/sepolicy/sepolicy.mk
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-#Use dlmalloc instead of jemalloc for mallocs
-MALLOC_IMPL := dlmalloc
-
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
