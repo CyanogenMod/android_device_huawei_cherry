@@ -178,7 +178,6 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     fstab.qcom \
     init.qcom.zram.sh \
-    init.qti.ims.sh \
     init.qcom.bms.sh
 
 # Keystore

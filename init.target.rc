@@ -35,8 +35,6 @@ on early-init
     symlink /data/tombstones /tombstones
 
 on post-fs
-    export LD_PRELOAD libNimsWrap.so
-
     # Symbols required for huawei blobs
     export LD_SHIM_LIBS "/system/lib/libcutilz.so|libhuawei_cutilz.so"
 
