@@ -489,39 +489,6 @@ vendor/lib/libmmcamera_sunny_q8v18a_eeprom.so
 vendor/lib/libmmcamera_sunny_q13v04b_eeprom.so
 vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 
-# CNE
-bin/cnd
-etc/cne/andsfCne.xml
-etc/cne/SwimConfig.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
--framework/cneapiclient.jar
--framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
-vendor/lib/libcne.so
-vendor/lib/libChamomilePA.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneconn.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libNimsWrap.so
-vendor/lib/libvendorconn.so
-vendor/lib/libwqe.so
-vendor/lib/libxml.so
-vendor/lib/liblowi_wifihal_nl.so
-vendor/lib/liblowi_wifihal.so
-
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/permissions/dpmapi.xml
--framework/com.qti.dpmframework.jar
--framework/dpmapi.jar
-vendor/lib/libdpmctmgr.so
-vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so
-vendor/lib/libdpmnsrm.so
-
 # DRM
 bin/qseecomd
 lib/libdrmdecrypt.so
@@ -585,54 +552,6 @@ vendor/lib/libscale.so
 # Graphics firmware
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
-
-#IMS
-#ims.xml
-#imslibrary
--vendor/app/ims/ims.apk
-#vendor/app/ims/lib/arm/libimscamera_jni.so
-#vendor/app/ims/lib/arm/libimsmedia_jni.so
-vendor/lib/libimscamera_jni.so
-vendor/lib/libimsmedia_jni.so
-#etc/permissions/qti_permissions.xml
-
-#IMS_VT
-vendor/lib/lib-imsvt.so
-vendor/lib/lib-imscamera.so
-vendor/lib/libtzplayready.so
-vendor/lib/libvcel.so
-
-#IMS_SETTINGS
-vendor/lib/lib-imss.so
-vendor/lib/lib-rcsimssjni.so
-
-#IMS_RCS
-vendor/lib/lib-imsxml.so
-vendor/lib/lib-imsrcs.so
-vendor/lib/lib-rcsjni.so
-
-#IMS_CONNECTIONMANAGER
-bin/imscmservice
-vendor/lib/lib-ims-rcscmjni.so
-vendor/lib/lib-imsrcscmservice.so
-vendor/lib/lib-imsrcscmclient.so
-vendor/lib/lib-imsrcscm.so
-#lib-ims-rcscmjni
--framework/imscmlibrary.jar
-#etc/permissions/imscm.xml
-
-#IMS_NEWARCH
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
-vendor/lib/lib-dplmedia.so
-vendor/lib/lib-imsdpl.so
-vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsSDP.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpdaemoninterface.so
-vendor/lib/lib-rtpsl.so
 
 # Media
 -vendor/lib/libHevcSwDecoder.so
