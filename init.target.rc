@@ -73,6 +73,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
+    setenv LD_PRELOAD /vendor/lib/libqcamerasvr-c++.so
 
 #enable zram
 on property:ro.config.zram=true
