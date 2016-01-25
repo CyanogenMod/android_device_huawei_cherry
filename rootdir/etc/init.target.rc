@@ -109,6 +109,8 @@ service qrngp /system/bin/qrngp -f
 
 on property:sys.boot_completed=1
    start qrngp
+    # Temp hack to fix torch not being registered on boot
+    restart media
 
 service qseecomd /system/bin/qseecomd
    class core
