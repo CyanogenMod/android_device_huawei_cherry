@@ -57,6 +57,7 @@ vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
+vendor/lib/libqcamerasvr-c++.so
 vendor/lib/libqomx_jpegenc.so
 
 # Camera Actuator
