@@ -73,9 +73,6 @@ BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     $(LOCAL_PATH)/cmhw
 
-# Enables CSVT
-TARGET_USES_CSVT := true
-
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
@@ -160,8 +157,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # Ril
 TARGET_RIL_VARIANT := caf
-# Added to indicate that protobuf-c is supported in this build
-PROTOBUF_SUPPORTED := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
