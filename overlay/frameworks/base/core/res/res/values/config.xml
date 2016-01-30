@@ -212,12 +212,12 @@
     <bool name="config_carrier_volte_available">false</bool>
 
     <!-- Flag specifying whether VT is available on device -->
-    <bool name="config_device_vt_available">true</bool>
+    <bool name="config_device_vt_available">false</bool>
 
     <!-- Flag specifying whether VT should be available for carrier: independent of
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->
-    <bool name="config_carrier_vt_available">true</bool>
+    <bool name="config_carrier_vt_available">false</bool>
 
     <string-array name="config_mobile_tcp_buffers">
         <item>"lte:2097152,4194304,8388608,262144,524288,1048576"</item>
