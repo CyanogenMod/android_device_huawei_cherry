@@ -564,7 +564,7 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 
 # Perf
-vendor/bin/perfd
+bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
 # Postprocessing
