@@ -69,7 +69,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen/cmhw \
+    $(LOCAL_PATH)/cmhw
 
 # Enables CSVT
 TARGET_USES_CSVT := true
