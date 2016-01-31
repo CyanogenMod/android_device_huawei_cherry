@@ -27,7 +27,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
     $(LOCAL_PATH)/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_codecs_8916.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_8916_32.xml:system/etc/media_codecs_performance.xml
