@@ -127,7 +127,8 @@ PRODUCT_PACKAGES += \
     libmmjpeg_interface \
     libqomx_core \
     libhuawei_cutilz \
-    libstlport
+    libstlport \
+    Snap
 
 # Charger
 PRODUCT_PACKAGES += \
