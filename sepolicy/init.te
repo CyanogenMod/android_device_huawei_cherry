@@ -1,0 +1,2 @@
+allow init diag_exec:file { getattr };
+allow init diag:process { transition rlimitinh siginh };

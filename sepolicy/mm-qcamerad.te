@@ -1,0 +1,4 @@
+allow mm-qcamerad log_device:chr_file rw_file_perms;
+allow mm-qcamerad log_device:dir search;
+allow mm-qcamerad system_data_file:dir { write remove_name add_name };
+allow mm-qcamerad system_data_file:sock_file unlink;
