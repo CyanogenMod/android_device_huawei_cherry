@@ -18,7 +18,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/cherry/msm8916_32.mk)
+$(call inherit-product, device/huawei/cherry/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cherry

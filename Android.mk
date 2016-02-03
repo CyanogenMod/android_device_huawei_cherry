@@ -21,4 +21,13 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
+#Create symbolic links
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
+        ln -sf /system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+        $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin; \
+        ln -sf /system/etc/wifi/WCNSS_wlan_dictionary.dat \
+        $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat; \
+        ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
+        $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+
 endif
