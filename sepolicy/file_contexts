@@ -1,0 +1,2 @@
+/system/bin/rmt_oeminfo                               u:object_r:oeminfo_exec:s0
+/dev/block/bootdevice/by-name/oeminfo                 u:object_r:oeminfo_partition_device:s0

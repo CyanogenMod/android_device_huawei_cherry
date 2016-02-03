@@ -1,0 +1,9 @@
+type oeminfo, domain;
+type oeminfo_exec, exec_type, file_type;
+init_daemon_domain(oeminfo)
+
+allow oeminfo smem_log_device:dir rw_file_perms;
+allow oeminfo smem_log_device:chr_file { read write ioctl open };
+allow oeminfo log_device:chr_file { read write ioctl open };
+allow oeminfo self:socket { read bind create write ioctl };
+allow oeminfo oeminfo_partition_device:blk_file { read write open };

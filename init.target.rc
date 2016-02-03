@@ -252,3 +252,4 @@ service rmt_oeminfo /system/bin/rmt_oeminfo
     class core
     user root
     disabled
+    seclabel u:r:oeminfo:s0
