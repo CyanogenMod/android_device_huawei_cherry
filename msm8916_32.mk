@@ -172,7 +172,6 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.sh \
-    init.class_main.sh \
     vold.fstab \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
