@@ -161,6 +161,9 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_SEPOLICY_DIRS += \
+    device/huawei/cherry/sepolicy
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
