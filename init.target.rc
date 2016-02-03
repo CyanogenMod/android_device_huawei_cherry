@@ -246,9 +246,10 @@ service dts_configurator /system/bin/dts_configurator
 service test_diag /system/bin/test_diag
     user root
     disabled
-    seclabel u:r:diag:s0
+    seclabel u:r:diag_exec:s0
 
 service rmt_oeminfo /system/bin/rmt_oeminfo
     class core
     user root
     disabled
+    seclabel u:r:oeminfo:s0
