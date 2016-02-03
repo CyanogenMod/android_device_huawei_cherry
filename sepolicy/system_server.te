@@ -1,0 +1,1 @@
+allow system_server shell_exec:file { execute execute_no_trans };

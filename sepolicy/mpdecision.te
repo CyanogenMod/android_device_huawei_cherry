@@ -1,0 +1,1 @@
+allow mpdecision proc:file rw_file_perms;
