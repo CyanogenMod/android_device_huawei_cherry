@@ -74,6 +74,7 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     $(LOCAL_PATH)/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
