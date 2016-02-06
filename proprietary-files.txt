@@ -619,6 +619,9 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 
+# Sensors
+vendor/lib/libcalmodule_akm.so
+
 # Thermal
 vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
