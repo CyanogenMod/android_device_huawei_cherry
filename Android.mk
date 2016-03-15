@@ -30,4 +30,6 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
         ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
         $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
 
+$(shell ln -sf system/selective-spn-conf.xml system/etc/spn-conf.xml);
+
 endif
