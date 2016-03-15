@@ -242,3 +242,24 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd.deny:system/etc/hostapd/hostapd.deny \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# NFC packages
+PRODUCT_PACKAGES += \
+    libnfc-nci \
+    libnfc_nci_jni \
+    nfc_nci.pn54x.default\
+    NfcNci \
+    Tag \
+    com.android.nfc_extras
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/releasetools/device_check.sh:install/bin/device_check.sh
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/nfc/etc/permissions/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    $(LOCAL_PATH)/nfc/etc/permissions/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    $(LOCAL_PATH)/nfc/etc/permissions/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    $(LOCAL_PATH)/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/nfc/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/nfc/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    $(LOCAL_PATH)/nfc/vendor/firmware/libpn547_fw.so:vendor/firmware/libpn547_fw.so
