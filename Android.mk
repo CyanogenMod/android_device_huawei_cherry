@@ -25,6 +25,8 @@ include $(CLEAR_VARS)
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
         ln -sf /system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
         $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin; \
+        ln -sf /system/etc/wifi/WCNSS_qcom_wlan_nv_4x.bin \
+        $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_4x.bin; \
         ln -sf /system/etc/wifi/WCNSS_wlan_dictionary.dat \
         $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat; \
         ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
