@@ -10,7 +10,6 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib/libFlacSwDec.so
--vendor/lib/libqct_resampler.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -493,9 +492,6 @@ vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 # DRM
 bin/qseecomd
 lib/libdrmdecrypt.so
-vendor/lib/libprdrmdecrypt.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/libdpmtcm.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
@@ -504,6 +500,7 @@ vendor/lib/libssd.so
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # GPS
@@ -569,6 +566,9 @@ bin/mm-pp-daemon
 vendor/lib/libdisp-aba.so
 -vendor/lib/libmm-abl.so
 vendor/lib/libmm-abl-oem.so
+vendor/lib/libmm-als.so
+-vendor/lib/libmm-disp-apis.so
+vendor/lib/libmm-qdcm.so
 
 # Qualcomm framework
 bin/irsc_util
