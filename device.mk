@@ -233,7 +233,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     calmodule.cfg \
     libcalmodule_common \
-    sensors.msm8916
+    sensors.msm8916 \
+    sensors.native
+
+# Sensor HAL conf file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
 # WiFi
 PRODUCT_PACKAGES += \

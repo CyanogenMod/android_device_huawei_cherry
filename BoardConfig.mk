@@ -78,6 +78,9 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Enable sensor multi HAL
+USE_SENSOR_MULTI_HAL := true
+
 # Flags
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
