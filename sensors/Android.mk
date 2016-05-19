@@ -43,6 +43,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_COPY_HEADERS_TO := sensors/inc
 LOCAL_COPY_HEADERS := 	\
 		CalibrationModule.h \
+		sensors_extension.h \
 		sensors.h
 
 LOCAL_SRC_FILES :=	\

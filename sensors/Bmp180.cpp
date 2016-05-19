@@ -138,7 +138,6 @@ int PressureSensor::enable(int32_t, int en) {
 			err = write(fd, buf, sizeof(buf));
 			close(fd);
 			mEnabled = flags;
-			setInitialState();
 			return 0;
 		}
 		return -1;

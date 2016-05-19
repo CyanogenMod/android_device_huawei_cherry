@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2014, The Linux Foundation. All rights reserved.
+Copyright (c) 2014 - 2016, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -27,6 +27,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------*/
 #include "NativeSensorManager.h"
+#include <unistd.h>
 
 ANDROID_SINGLETON_STATIC_INSTANCE(NativeSensorManager);
 
@@ -323,19 +324,21 @@ NativeSensorManager::~NativeSensorManager()
 			delete context[i].driver;
 		}
 
-		list_for_each_safe(node, n, &context[i].listener) {
-			item = node_to_item(node, struct SensorRefMap, list);
-			if (item != NULL) {
-				list_remove(&item->list);
-				delete item;
+		if (node != NULL) {
+			list_for_each_safe(node, n, &context[i].listener) {
+				item = node_to_item(node, struct SensorRefMap, list);
+				if (item != NULL) {
+					list_remove(&item->list);
+					delete item;
+				}
 			}
-		}
 
-		list_for_each_safe(node, n, &context[i].dep_list) {
-			item = node_to_item(node, struct SensorRefMap, list);
-			if (item != NULL) {
-				list_remove(&item->list);
-				delete item;
+			list_for_each_safe(node, n, &context[i].dep_list) {
+				item = node_to_item(node, struct SensorRefMap, list);
+				if (item != NULL) {
+					list_remove(&item->list);
+					delete item;
+				}
 			}
 		}
 	}
@@ -527,13 +530,14 @@ int NativeSensorManager::getDataInfo() {
 			 * magnetometer. Some sensor vendors provide such implementations. The pseudo
 			 * gyroscope sensor is low cost but the performance is worse than the actual
 			 * gyroscope. So disable it for the system with actual gyroscope. */
+#ifdef ENABLE_DEPRECATED_VITRUAL_SENSOR
 			if (!initVirtualSensor(&context[mSensorCount], SENSORS_HANDLE(mSensorCount),
 						virtualSensorList[PSEUDO_GYROSCOPE])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
 				addDependency(&context[mSensorCount], sensor_mag.handle);
 				mSensorCount++;
 			}
-
+#endif
 			compositeVirtualSensorName(sensor_mag.name, virtualSensorName[LINEAR_ACCELERATION], SENSOR_TYPE_LINEAR_ACCELERATION);
 			ALOGD("liear acceleration virtual sensor name changed to %s\n", virtualSensorName[LINEAR_ACCELERATION]);
 			/* For linear acceleration */
@@ -777,14 +781,15 @@ int NativeSensorManager::getEventPath(const char *sysfs_path, char *event_path)
 	int len;
 	char *needle;
 
+	if ((sysfs_path == NULL) || (event_path == NULL)) {
+		ALOGE("invalid NULL argument.");
+		return -EINVAL;
+	}
+
 	dir = opendir(sysfs_path);
 	if (dir == NULL) {
 		ALOGE("open %s failed.(%s)\n", strerror(errno));
 		return -1;
-	}
-	if ((sysfs_path == NULL) || (event_path == NULL)) {
-		ALOGE("invalid NULL argument.");
-		return -EINVAL;
 	}
 
 	len = readlink(sysfs_path, symlink, PATH_MAX);
@@ -931,13 +936,13 @@ int NativeSensorManager::activate(int handle, int enable)
 			/* HAL 1.3 already set listener's delay and latency
 			 * Sync it right now to make it take effect.
 			 */
-			syncDelay(item->ctx->sensor->handle);
 			syncLatency(item->ctx->sensor->handle);
 #endif
 
 			/* Enable the background sensor and register a listener on it. */
 			ALOGD("%s calling driver enable", item->ctx->sensor->name);
 			item->ctx->driver->enable(item->ctx->sensor->handle, 1);
+			syncDelay(item->ctx->sensor->handle);
 
 		} else {
 			/* The background sensor has other listeners, we need
@@ -1180,15 +1185,6 @@ int NativeSensorManager::flush(int handle)
 	if (list->sensor->flags & SENSOR_FLAG_ONE_SHOT_MODE)
 		return -EINVAL;
 
-	list_for_each(node, &list->dep_list) {
-		item = node_to_item(node, struct SensorRefMap, list);
-		ret = item->ctx->driver->flush(item->ctx->sensor->handle);
-		if (ret) {
-			ALOGE("Calling flush failed(%d)", ret);
-			return ret;
-		}
-	}
-
 	/* calling flush for virtual sensor */
 	if (list->is_virtual) {
 		ret = list->driver->flush(handle);
@@ -1196,6 +1192,17 @@ int NativeSensorManager::flush(int handle)
 			ALOGE("Calling flush failed(%d)", ret);
 			return ret;
 		}
+
+	} else {
+		list_for_each(node, &list->dep_list) {
+			item = node_to_item(node, struct SensorRefMap, list);
+			ret = item->ctx->driver->flush(item->ctx->sensor->handle);
+			if (ret) {
+				ALOGE("Calling flush failed(%d)", ret);
+				return ret;
+			}
+		}
+
 	}
 
 	return 0;
