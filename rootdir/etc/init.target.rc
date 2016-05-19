@@ -166,9 +166,15 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch
 
-    # vibrator
+    # Vibrator intensity control
+    chown system system /sys/class/timed_output/vibrator/vtg_default
     chown system system /sys/class/timed_output/vibrator/vtg_level
+    chown system system /sys/class/timed_output/vibrator/vtg_max
+    chown system system /sys/class/timed_output/vibrator/vtg_min
+    chmod 0644 /sys/class/timed_output/vibrator/vtg_default
     chmod 0644 /sys/class/timed_output/vibrator/vtg_level
+    chmod 0644 /sys/class/timed_output/vibrator/vtg_max
+    chmod 0644 /sys/class/timed_output/vibrator/vtg_min
 
     # touchscreen
     chown system system /sys/touch_screen/glove_func/signal_disparity
