@@ -618,6 +618,7 @@ vendor/lib/libxml.so
 
 # Sensors
 vendor/lib/libcalmodule_akm.so
+vendor/lib/libcalmodule_gyroscope.so
 
 # Thermal
 vendor/bin/thermal-engine
