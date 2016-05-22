@@ -561,15 +561,6 @@ vendor/firmware/libpn547_fw.so
 bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
-# Postprocessing
-bin/mm-pp-daemon
-vendor/lib/libdisp-aba.so
--vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
-vendor/lib/libmm-als.so
--vendor/lib/libmm-disp-apis.so
-vendor/lib/libmm-qdcm.so
-
 # Qualcomm framework
 bin/irsc_util
 etc/data/dsi_config.xml
