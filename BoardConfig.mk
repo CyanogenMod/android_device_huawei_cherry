@@ -163,6 +163,7 @@ TW_NEW_ION_HEAP := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_TARGET_USES_QCOM_BSP := true
 TW_EXTRA_LANGUAGES := true
+TW_INPUT_BLACKLIST := "accelerometer"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 endif
