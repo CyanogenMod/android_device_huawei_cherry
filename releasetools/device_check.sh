@@ -17,16 +17,20 @@
 #
 
 PRODUCT_MODEL=`getprop ro.product.model`
+NFC_MODEL="C8817D C8817E G620S-L01 Che1-CL10"
 
-# Only CHE1_CL10 has NFC
-if [ "$PRODUCT_MODEL" != "Che1-CL10" ]; then
+RESULT=$(echo $NFC_MODEL | grep "$PRODUCT_MODEL")
+
+if [[ "$RESULT" = "" ]]
+then
     # Remove NFC
-    rm -rf /system/app/NfcNci
+    rm -rf /system/app/QNfc
     rm -rf /system/priv-app/Tag
     rm -rf /system/lib/*nfc*
     rm -rf /system/lib/hw/*nfc*
     rm -rf /system/etc/*nfc*
     rm -rf /system/etc/permissions/*nfc*
     rm -rf /system/framework/*nfc*
-    rm -rf /vendor/firmware/*pn547*
+    rm -rf /system/vendor/lib/*nfc*
+    rm -rf /system/vendor/firmware/*pn547*
 fi
