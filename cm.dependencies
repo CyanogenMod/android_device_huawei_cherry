@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_device_huawei_msm8916-common",
+    "target_path": "device/huawei/msm8916-common"
+  }
+]
