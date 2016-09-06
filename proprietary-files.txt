@@ -6,9 +6,9 @@ etc/nfc/hardfault.cfg
 etc/permissions/com.android.nfc.helper.xml
 etc/permissions/com.android.qualcomm.qti.nfc_extras.xml
 etc/permissions/com.vzw.nfc.xml
--framework/com.android.nfc.helper.jar
--framework/com.android.qualcomm.qti.nfc_extras.jar
--framework/com.vzw.nfc.jar
+framework/com.android.nfc.helper.jar
+framework/com.android.qualcomm.qti.nfc_extras.jar
+framework/com.vzw.nfc.jar
 vendor/lib/libqnfc-nci.so
 vendor/lib/libqnfc_nci_jni.so
 vendor/lib/hw/nfc_nci.qc199x.default.so
